@@ -1,0 +1,11 @@
+@import "~normalize.css";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+body {
+	background-color: #222;
+	color: #eee;
+	margin: 0;
+}
