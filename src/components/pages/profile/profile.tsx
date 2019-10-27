@@ -4,18 +4,18 @@ import { from, Observable } from "rxjs";
 import { switchMap } from "rxjs/operators";
 import { useObservable } from "rxjs-hooks";
 
-function fetchJson$(input: RequestInfo, init?: RequestInit | undefined): Observable<any> {
+function fetchJson$(input: RequestInfo, init?: RequestInit): Observable<any> {
 	return from(fetch(input, init)).pipe(switchMap(res => from(res.json())));
 }
 
 export const Profile: React.FC = () => {
-	const { id: name } = useParams();
+	const { handle } = useParams();
 
-	const profile = useObservable(() => fetchJson$(`https://dev.glib.app/?user=${name}`));
+	const profile = useObservable(() => fetchJson$(`https://dev.glib.app/?user=${handle}`));
 
 	return (
 		<>
-			Profile {name}
+			Profile {handle}
 			<br />
 			<br />
 			<code>{JSON.stringify(profile)}</code>

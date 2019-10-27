@@ -25,7 +25,7 @@ export const TextField: React.FC<TextFieldProps> = ({ children }) => {
 
 export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = props => (
 	<>
-		<input type="text" className="mdc-text-field__input" {...props} />
+		<input {...props} className={`mdc-text-field__input ${props.className || ""}`} />
 		<div className="mdc-line-ripple"></div>
 	</>
 );

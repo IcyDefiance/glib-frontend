@@ -1,21 +1,31 @@
+import { isElectron } from "common/util";
 import * as React from "react";
-import { BrowserRouter, Route, Switch, HashRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter, Link, Route, Switch } from "react-router-dom";
+import { TopAppBar } from "./material/top-app-bar/top-app-bar";
 import { Home } from "./pages/home/home";
 import { Profile } from "./pages/profile/profile";
-import { isElectron } from "common/util";
 
 export const App: React.FC = () => {
-	const routes = (
-		<Switch>
-			<Route path="/profile/:id">
-				<Profile />
-			</Route>
-			<Route path="/">
-				<Home />
-			</Route>
-		</Switch>
+	const inner = (
+		<>
+			<TopAppBar dense>
+				<TopAppBar.Title>
+					<Link to="/">Glib</Link>
+				</TopAppBar.Title>
+			</TopAppBar>
+			<div className="mt-3">
+				<Switch>
+					<Route path="/profile/:handle">
+						<Profile />
+					</Route>
+					<Route path="/">
+						<Home />
+					</Route>
+				</Switch>
+			</div>
+		</>
 	);
 
 	// TODO: split into multiple entry points
-	return isElectron() ? <HashRouter>{routes}</HashRouter> : <BrowserRouter>{routes}</BrowserRouter>;
+	return isElectron() ? <HashRouter>{inner}</HashRouter> : <BrowserRouter>{inner}</BrowserRouter>;
 };
