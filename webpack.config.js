@@ -35,7 +35,7 @@ module.exports = env => {
 					}
 				]
 			},
-			output: { path: __dirname + "/dist", filename: "react.js" },
+			output: { path: __dirname + "/dist", filename: "main.js" },
 			resolve: { extensions: [".ts", ".tsx", ".js"], plugins: [new TsconfigPathsPlugin()] },
 			plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
 			optimization

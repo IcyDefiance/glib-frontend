@@ -2,7 +2,7 @@ import * as React from "react";
 import { useObservable } from "rxjs-hooks";
 import { messages$, addMessage } from "src/state/chat";
 import styled from "styled-components";
-import { TextField, Input } from "./material/text-field/text-field";
+import { TextField, Input } from "../material/text-field/text-field";
 
 const From = styled.span`
 	color: #0ff;
