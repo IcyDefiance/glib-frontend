@@ -11,23 +11,23 @@ function fetchJson$(input: RequestInfo, init?: RequestInit): Observable<any> {
 }
 
 const Splash = styled.div`
-	min-height: 448px;
+	min-height: 348px;
 	background-size: cover;
 `;
 
 const ProfileInfo = styled.div`
 	background-color: rgba(0, 0, 0, 0.7);
-	padding: 24px;
 `;
 
 const AvatarWrap = styled.div`
-	width: 400px;
-	margin-right: 24px;
+	width: 300px;
 `;
 
 const Avatar = styled.img`
 	position: absolute;
 	bottom: 0;
+	left: 0;
+	right: 0;
 `;
 
 const DisplayName = styled.div`
@@ -47,15 +47,15 @@ export const Profile: React.FC = () => {
 		return (
 			<>
 				<Splash className="d-flex align-items-end" style={{ backgroundImage: `url(${profile.splashPic})` }}>
-					<ProfileInfo className="d-flex w-100">
-						<AvatarWrap className="flex-center position-relative">
-							<Avatar src={profile.profilePic} />
+					<ProfileInfo className="d-flex p-3 w-100">
+						<AvatarWrap className="flex-center position-relative mr-3">
+							<Avatar src={profile.profilePic} className="img-fluid" />
 						</AvatarWrap>
 						<div>
 							<DisplayName>{profile.displayName}</DisplayName>
-							<Faded>
+							<div className="text-muted">
 								{profile.name}@{profile.home}
-							</Faded>
+							</div>
 						</div>
 					</ProfileInfo>
 				</Splash>

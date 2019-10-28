@@ -1,8 +1,34 @@
 @import "~normalize.css";
+
+$spacer: 24px;
+$spacers: (
+	0: 0,
+	1: (
+		$spacer / 3
+	),
+	2: (
+		$spacer * 2 / 3
+	),
+	3: $spacer,
+	4: (
+		$spacer * 1.5
+	),
+	5: (
+		$spacer * 3
+	)
+);
+
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/embed";
+@import "~bootstrap/scss/utilities/flex";
+@import "~bootstrap/scss/utilities/position";
+@import "~bootstrap/scss/utilities/sizing";
+@import "~bootstrap/scss/utilities/spacing";
+@import "~bootstrap/scss/utilities/text";
 
 body {
 	background-color: #222;
