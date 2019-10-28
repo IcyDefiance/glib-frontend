@@ -13,16 +13,14 @@ export const App: React.FC = () => {
 					<Link to="/">Glib</Link>
 				</TopAppBar.Title>
 			</TopAppBar>
-			<div className="mt-3">
-				<Switch>
-					<Route path="/profile/:handle">
-						<Profile />
-					</Route>
-					<Route path="/">
-						<Home />
-					</Route>
-				</Switch>
-			</div>
+			<Switch>
+				<Route path="/profile/:handle">
+					<Profile />
+				</Route>
+				<Route path="/">
+					<Home />
+				</Route>
+			</Switch>
 		</>
 	);
 

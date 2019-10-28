@@ -32,6 +32,7 @@
 		"webpack-cli": "^3.3.9"
 	},
 	"dependencies": {
+		"@material/layout-grid": "^3.1.0",
 		"@material/textfield": "^3.2.0",
 		"@material/top-app-bar": "^3.2.0",
 		"@types/react-router-dom": "^5.1.0",
