@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./text-field.scss";
 import { MDCTextField } from "@material/textfield/index";
 
 export interface TextFieldProps {

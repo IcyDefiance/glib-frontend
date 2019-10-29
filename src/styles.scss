@@ -1,21 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
 @import "~normalize.css";
 
 $spacer: 24px;
 $spacers: (
 	0: 0,
 	1: (
-		$spacer / 3
+		$spacer / 3,
 	),
 	2: (
-		$spacer * 2 / 3
+		$spacer * 2 / 3,
 	),
 	3: $spacer,
 	4: (
-		$spacer * 1.5
+		$spacer * 1.5,
 	),
 	5: (
-		$spacer * 3
-	)
+		$spacer * 3,
+	),
 );
 
 @import "~bootstrap/scss/functions";
@@ -30,9 +32,34 @@ $spacers: (
 @import "~bootstrap/scss/utilities/spacing";
 @import "~bootstrap/scss/utilities/text";
 
+$mdc-theme-primary: #268bd2;
+$mdc-theme-secondary: #2aa198;
+$mdc-theme-surface: #252525;
+$mdc-theme-background: #222;
+$mdc-typography-font-family: unquote("Roboto, sans-serif");
+
+@import "~@material/layout-grid/mdc-layout-grid";
+@import "~@material/textfield/mdc-text-field";
+@import "~@material/top-app-bar/mdc-top-app-bar";
+@import "~@material/typography/mdc-typography";
+
+.mdc-top-app-bar__title a {
+	color: white;
+	text-decoration: none;
+}
+
 body {
 	background-color: #222;
 	color: #eee;
+}
+
+a {
+	color: $mdc-theme-secondary;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .flex-center {

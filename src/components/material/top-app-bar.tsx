@@ -1,6 +1,5 @@
 import { MDCTopAppBar } from "@material/top-app-bar/index";
 import * as React from "react";
-import "./top-app-bar.scss";
 
 export interface TopAppBarProps extends React.HTMLAttributes<HTMLUnknownElement> {
 	dense?: boolean;
@@ -22,7 +21,7 @@ const TopAppBarFn: React.FC<TopAppBarProps> = props => {
 
 	return (
 		<>
-			<header ref={header} className={`mdc-top-app-bar ${dense} ${fixed}`}>
+			<header ref={header} {...props} className={`mdc-top-app-bar ${dense} ${fixed} ${props.className}`}>
 				<div className="mdc-top-app-bar__row">
 					<section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
 						{props.children}

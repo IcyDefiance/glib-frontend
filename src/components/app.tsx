@@ -1,7 +1,7 @@
 import { isElectron } from "common/util";
 import * as React from "react";
 import { BrowserRouter, HashRouter, Link, Route, Switch } from "react-router-dom";
-import { TopAppBar } from "./material/top-app-bar/top-app-bar";
+import { TopAppBar } from "./material/top-app-bar";
 import { Home } from "./pages/home/home";
 import { Profile } from "./pages/profile/profile";
 

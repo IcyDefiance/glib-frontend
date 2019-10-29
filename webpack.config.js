@@ -36,10 +36,7 @@ module.exports = env => {
 					{
 						test: /\.scss$/,
 						use: [
-							{
-								loader: MiniCssExtractPlugin.loader,
-								options: { hmr: !prod },
-							},
+							MiniCssExtractPlugin.loader,
 							"css-loader",
 							{ loader: "sass-loader", options: { sassOptions: { includePaths: ["node_modules"] } } },
 						],
