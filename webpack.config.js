@@ -1,10 +1,13 @@
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = env => {
+	const analyze = env && env.analyze;
 	const prod = env && env.prod;
 	const mode = prod ? "production" : "development";
+	const analyzerPlugin = analyze ? [new BundleAnalyzerPlugin()] : [];
 	return [
 		{
 			mode,
@@ -46,6 +49,7 @@ module.exports = env => {
 			output: { path: __dirname + "/dist", filename: "main.js" },
 			resolve: { extensions: [".ts", ".tsx", ".js"], plugins: [new TsconfigPathsPlugin()] },
 			plugins: [
+				...analyzerPlugin,
 				new HtmlWebpackPlugin({ template: "./src/index.html" }),
 				new MiniCssExtractPlugin({
 					// Options similar to the same options in webpackOptions.output
