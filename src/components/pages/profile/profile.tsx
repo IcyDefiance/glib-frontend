@@ -1,9 +1,8 @@
 import * as React from "react";
 import { useParams } from "react-router";
 import { from, Observable } from "rxjs";
-import { switchMap } from "rxjs/operators";
 import { useObservable } from "rxjs-hooks";
-import { LayoutGrid } from "src/components/material/layout-grid/layout-grid";
+import { switchMap } from "rxjs/operators";
 import styled from "styled-components";
 
 function fetchJson$(input: RequestInfo, init?: RequestInit): Observable<any> {
@@ -24,18 +23,11 @@ const AvatarWrap = styled.div`
 `;
 
 const Avatar = styled.img`
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	margin-top: -100%;
 `;
 
 const DisplayName = styled.div`
 	font-size: 1.5rem;
-`;
-
-const Faded = styled.div`
-	color: #ccc;
 `;
 
 export const Profile: React.FC = () => {
@@ -48,7 +40,7 @@ export const Profile: React.FC = () => {
 			<>
 				<Splash className="d-flex align-items-end" style={{ backgroundImage: `url(${profile.splashPic})` }}>
 					<ProfileInfo className="d-flex p-3 w-100">
-						<AvatarWrap className="flex-center position-relative mr-3">
+						<AvatarWrap className="d-flex align-items-end mr-3">
 							<Avatar src={profile.profilePic} className="img-fluid" />
 						</AvatarWrap>
 						<div>
