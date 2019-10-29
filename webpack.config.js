@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = env => {
@@ -32,7 +33,10 @@ module.exports = env => {
 					{
 						test: /\.scss$/,
 						use: [
-							"style-loader",
+							{
+								loader: MiniCssExtractPlugin.loader,
+								options: { hmr: !prod },
+							},
 							"css-loader",
 							{ loader: "sass-loader", options: { sassOptions: { includePaths: ["node_modules"] } } },
 						],
@@ -41,7 +45,16 @@ module.exports = env => {
 			},
 			output: { path: __dirname + "/dist", filename: "main.js" },
 			resolve: { extensions: [".ts", ".tsx", ".js"], plugins: [new TsconfigPathsPlugin()] },
-			plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+			plugins: [
+				new HtmlWebpackPlugin({ template: "./src/index.html" }),
+				new MiniCssExtractPlugin({
+					// Options similar to the same options in webpackOptions.output
+					// all options are optional
+					filename: "[name].css",
+					chunkFilename: "[id].css",
+					ignoreOrder: false, // Enable to remove warnings about conflicting order
+				}),
+			],
 		},
 	];
 };
