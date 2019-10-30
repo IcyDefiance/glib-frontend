@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./layout-grid.scss";
 
 const LayoutGridFn: React.FC<React.HTMLAttributes<HTMLDivElement>> = props => {
 	return (
