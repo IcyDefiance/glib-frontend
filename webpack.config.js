@@ -20,6 +20,15 @@ module.exports = env => {
 		},
 		{
 			mode,
+			entry: "./src/preload.ts",
+			target: "electron-preload",
+			devtool: "source-map",
+			module: { rules: [{ test: /\.ts$/, include: /src/, use: [{ loader: "ts-loader" }] }] },
+			output: { path: __dirname + "/dist", filename: "preload.js" },
+			node: { __dirname: false },
+		},
+		{
+			mode,
 			entry: "./src/react.tsx",
 			target: "electron-renderer",
 			devtool: "source-map",

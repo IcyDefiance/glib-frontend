@@ -6,16 +6,14 @@ export interface TextFieldProps {
 }
 
 export const TextField: React.FC<TextFieldProps> = ({ children }) => {
-	const div = React.useRef<HTMLDivElement>(null);
-
-	React.useEffect(() => {
-		if (div.current) {
-			new MDCTextField(div.current);
+	const ref = React.useCallback((el: HTMLElement | null) => {
+		if (el) {
+			new MDCTextField(el);
 		}
-	});
+	}, []);
 
 	return (
-		<div ref={div} className="mdc-text-field">
+		<div ref={ref} className="mdc-text-field">
 			{children}
 			<div className="mdc-line-ripple"></div>
 		</div>

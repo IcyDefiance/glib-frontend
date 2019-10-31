@@ -47,6 +47,10 @@ $mdc-typography-font-family: unquote("Roboto, sans-serif");
 .mdc-top-app-bar__title a {
 	color: white;
 	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 body {
@@ -57,10 +61,10 @@ body {
 a {
 	color: $mdc-theme-secondary;
 	text-decoration: none;
-}
 
-a:hover {
-	text-decoration: underline;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .flex-center {

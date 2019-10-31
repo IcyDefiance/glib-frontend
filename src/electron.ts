@@ -11,9 +11,7 @@ function createWindow() {
 	mainWindow = new BrowserWindow({
 		width: 1440,
 		height: 810,
-		webPreferences: {
-			// preload: path.join(__dirname, "preload.js")
-		},
+		webPreferences: { preload: path.join(__dirname, "preload.js") },
 		frame: false,
 	});
 	mainWindow.removeMenu();

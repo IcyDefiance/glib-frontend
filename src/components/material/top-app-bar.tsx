@@ -1,19 +1,17 @@
 import { MDCTopAppBar } from "@material/top-app-bar/index";
 import * as React from "react";
 
-export interface TopAppBarProps extends React.HTMLAttributes<HTMLUnknownElement> {
+export interface TopAppBarProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
 	dense?: boolean;
 	fixed?: boolean;
 }
 
 const TopAppBarFn: React.FC<TopAppBarProps> = props => {
-	const header = React.useRef<HTMLDivElement>(null);
-
-	React.useEffect(() => {
-		if (header.current) {
-			new MDCTopAppBar(header.current);
+	const header = React.useCallback((header: HTMLElement | null) => {
+		if (header) {
+			new MDCTopAppBar(header);
 		}
-	});
+	}, []);
 
 	const dense = props.dense ? "mdc-top-app-bar--dense" : "";
 	const fixed = props.fixed ? "mdc-top-app-bar--fixed" : "";
@@ -25,7 +23,11 @@ const TopAppBarFn: React.FC<TopAppBarProps> = props => {
 
 	return (
 		<>
-			<header ref={header} {...htmlProps} className={`mdc-top-app-bar ${dense} ${fixed} ${props.className}`}>
+			<header
+				ref={header}
+				{...htmlProps}
+				className={`mdc-top-app-bar ${dense} ${fixed} ${props.className || ""}`}
+			>
 				<div className="mdc-top-app-bar__row">
 					<section className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
 						{props.children}
