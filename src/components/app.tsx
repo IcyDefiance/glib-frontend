@@ -24,11 +24,13 @@ export const App: React.FC = () => {
 		<>
 			{electron && <TitleBar />}
 			<Content className="position-relative">
-				<TopAppBar dense className="position-static">
-					<TopAppBar.Title>
-						<Link to="/">Glib</Link>
-					</TopAppBar.Title>
-				</TopAppBar>
+				{!electron && (
+					<TopAppBar dense className="position-static">
+						<TopAppBar.Title>
+							<Link to="/">Glib</Link>
+						</TopAppBar.Title>
+					</TopAppBar>
+				)}
 				<Switch>
 					<Route path="/profile/:handle">
 						<Profile />

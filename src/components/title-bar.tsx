@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { miWindowClose, miWindowMaximize, miWindowMinimize } from "./icons/icons";
 import { Button } from "./material/button";
+import { Link } from "react-router-dom";
 
 declare function minimize(): void;
 declare function maximize(): void;
@@ -21,6 +22,15 @@ const TitleWrap = styled.div`
 	}
 `;
 
+const TitleLink = styled(Link)`
+	color: #6c757d;
+
+	&:hover {
+		color: #868e96;
+		text-decoration: none;
+	}
+`;
+
 const TitleAdjust = styled.div`
 	height: 32px;
 `;
@@ -28,7 +38,10 @@ const TitleAdjust = styled.div`
 export const TitleBar: React.FC = () => {
 	return (
 		<>
-			<TitleWrap className="d-flex justify-content-end">
+			<TitleWrap className="d-flex align-items-stretch">
+				<div className="flex-grow-1 d-flex align-items-center pl-2">
+					<TitleLink to="/">Glib</TitleLink>
+				</div>
 				<Button type="button" dense tabIndex={-1} onClick={() => minimize()} className="text-muted">
 					<Button.Icon icon={miWindowMinimize} className="mr-0" />
 				</Button>
