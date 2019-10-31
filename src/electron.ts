@@ -13,8 +13,11 @@ function createWindow() {
 		height: 810,
 		webPreferences: {
 			// preload: path.join(__dirname, "preload.js")
-		}
+		},
+		frame: false,
 	});
+	mainWindow.removeMenu();
+	mainWindow.webContents.openDevTools();
 
 	// and load the index.html of the app.
 	mainWindow.loadFile("dist/index.html");

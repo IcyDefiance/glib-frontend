@@ -38,6 +38,7 @@ $mdc-theme-surface: #252525;
 $mdc-theme-background: #222;
 $mdc-typography-font-family: unquote("Roboto, sans-serif");
 
+@import "~@material/button/mdc-button";
 @import "~@material/layout-grid/mdc-layout-grid";
 @import "~@material/textfield/mdc-text-field";
 @import "~@material/top-app-bar/mdc-top-app-bar";

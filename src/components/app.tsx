@@ -4,10 +4,12 @@ import { BrowserRouter, HashRouter, Link, Route, Switch } from "react-router-dom
 import { TopAppBar } from "./material/top-app-bar";
 import { Home } from "./pages/home/home";
 import { Profile } from "./pages/profile/profile";
+import { TitleBar } from "./title-bar";
 
 export const App: React.FC = () => {
 	const inner = (
 		<>
+			{isElectron && <TitleBar />}
 			<TopAppBar dense>
 				<TopAppBar.Title>
 					<Link to="/">Glib</Link>

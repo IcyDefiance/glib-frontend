@@ -3,20 +3,10 @@ import { Frozen, Immutable } from "./decorators";
 @Frozen
 @Immutable
 export class Rect {
-	constructor(
-		public x: number,
-		public y: number,
-		public width: number,
-		public height: number
-	) {}
+	constructor(public x: number, public y: number, public width: number, public height: number) {}
 
 	contains(coord: Vec2): boolean {
-		return (
-			coord.x >= this.x &&
-			coord.y >= this.y &&
-			coord.x < this.width &&
-			coord.y < this.height
-		);
+		return coord.x >= this.x && coord.y >= this.y && coord.x < this.width && coord.y < this.height;
 	}
 }
 
@@ -24,6 +14,10 @@ export class Rect {
 @Immutable
 export class Vec2 {
 	constructor(public x: number, public y: number) {}
+
+	add(rhs: Vec2) {
+		return new Vec2(this.x + rhs.x, this.y + rhs.y);
+	}
 
 	mul(s: number): Vec2 {
 		return new Vec2(this.x * s, this.y * s);
@@ -50,7 +44,7 @@ export class Vec3 {
 		return new Vec3(
 			this.y * rhs.z - this.z * rhs.y,
 			this.z * rhs.x - this.x * rhs.z,
-			this.x * rhs.y - this.y * rhs.x
+			this.x * rhs.y - this.y * rhs.x,
 		);
 	}
 
