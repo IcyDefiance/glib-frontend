@@ -30,20 +30,20 @@ export const miInformation: IconDefinition = {
 		},
 	],
 };
-export const miClose: IconDefinition = {
+export const miWindowClose: IconDefinition = {
 	paths: [
 		{
 			path:
-				"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+				"M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z",
 			fill: currentColor,
 		},
 	],
 };
-export const miMaximize: IconDefinition = {
-	paths: [{ path: "M0 0h24v24H0V0z", fill: none }, { path: "M3 3h18v2H3V3z", fill: currentColor }],
+export const miWindowMaximize: IconDefinition = {
+	paths: [{ path: "M4,4H20V20H4V4M6,8V18H18V8H6Z", fill: currentColor }],
 };
-export const miMinimize: IconDefinition = {
-	paths: [{ path: "M0 0h24v24H0V0z", fill: none }, { path: "M6 19h12v2H6v-2z", fill: currentColor }],
+export const miWindowMinimize: IconDefinition = {
+	paths: [{ path: "M20,14H4V10H20", fill: currentColor }],
 };
 
 export interface IconDefinition {

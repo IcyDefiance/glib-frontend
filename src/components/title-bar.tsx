@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { miClose, miMaximize, miMinimize } from "./icons/icons";
+import { miWindowClose, miWindowMaximize, miWindowMinimize } from "./icons/icons";
 import { Button } from "./material/button";
 
 declare function minimize(): void;
@@ -30,13 +30,13 @@ export const TitleBar: React.FC = () => {
 		<>
 			<TitleWrap className="d-flex justify-content-end">
 				<Button type="button" dense tabIndex={-1} onClick={() => minimize()} className="text-muted">
-					<Button.Icon icon={miMinimize} />
+					<Button.Icon icon={miWindowMinimize} />
 				</Button>
 				<Button type="button" dense tabIndex={-1} onClick={() => maximize()} className="text-muted">
-					<Button.Icon icon={miMaximize} />
+					<Button.Icon icon={miWindowMaximize} />
 				</Button>
 				<Button type="button" dense tabIndex={-1} onClick={() => window.close()} className="text-muted">
-					<Button.Icon icon={miClose} />
+					<Button.Icon icon={miWindowClose} />
 				</Button>
 			</TitleWrap>
 			<TitleAdjust />
