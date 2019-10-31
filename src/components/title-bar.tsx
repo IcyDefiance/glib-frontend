@@ -30,13 +30,13 @@ export const TitleBar: React.FC = () => {
 		<>
 			<TitleWrap className="d-flex justify-content-end">
 				<Button type="button" dense tabIndex={-1} onClick={() => minimize()} className="text-muted">
-					<Button.Icon icon={miWindowMinimize} />
+					<Button.Icon icon={miWindowMinimize} className="mr-0" />
 				</Button>
 				<Button type="button" dense tabIndex={-1} onClick={() => maximize()} className="text-muted">
-					<Button.Icon icon={miWindowMaximize} />
+					<Button.Icon icon={miWindowMaximize} className="mr-0" />
 				</Button>
 				<Button type="button" dense tabIndex={-1} onClick={() => window.close()} className="text-muted">
-					<Button.Icon icon={miWindowClose} />
+					<Button.Icon icon={miWindowClose} className="mr-0" />
 				</Button>
 			</TitleWrap>
 			<TitleAdjust />
