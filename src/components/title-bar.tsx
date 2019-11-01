@@ -15,9 +15,9 @@ const TitleWrap = styled.div`
 	top: 0;
 	right: 0;
 	left: 0;
-	background-color: #1a1a1a;
+	background-color: #191a1c;
 
-	* {
+	> * > * {
 		-webkit-app-region: no-drag;
 	}
 `;
@@ -42,15 +42,24 @@ export const TitleBar: React.FC = () => {
 				<div className="flex-grow-1 d-flex align-items-center pl-2">
 					<TitleLink to="/">Glib</TitleLink>
 				</div>
-				<Button type="button" dense tabIndex={-1} onClick={() => minimize()} className="text-muted">
-					<Button.Icon icon={miWindowMinimize} className="mr-0" />
-				</Button>
-				<Button type="button" dense tabIndex={-1} onClick={() => maximize()} className="text-muted">
-					<Button.Icon icon={miWindowMaximize} className="mr-0" />
-				</Button>
-				<Button type="button" dense tabIndex={-1} onClick={() => window.close()} className="text-muted">
-					<Button.Icon icon={miWindowClose} className="mr-0" />
-				</Button>
+				<div>
+					<Button type="button" dense tabIndex={-1} className="rounded-0 px-0" onClick={() => minimize()}>
+						<Button.Icon icon={miWindowMinimize} className="text-muted mr-0" />
+					</Button>
+					<Button type="button" dense tabIndex={-1} className="rounded-0 px-0" onClick={() => maximize()}>
+						<Button.Icon icon={miWindowMaximize} className="text-muted mr-0" />
+					</Button>
+					<Button
+						type="button"
+						color="danger"
+						dense
+						tabIndex={-1}
+						className="rounded-0 px-0"
+						onClick={() => window.close()}
+					>
+						<Button.Icon icon={miWindowClose} className="text-muted mr-0" />
+					</Button>
+				</div>
 			</TitleWrap>
 			<TitleAdjust />
 		</>

@@ -1,7 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 
-@import "~normalize.css";
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
 
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$body-bg: $gray-900;
+$body-color: $white;
+$link-color: $teal;
 $spacer: 24px;
 $spacers: (
 	0: 0,
@@ -23,7 +47,9 @@ $spacers: (
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/images";
+@import "~bootstrap/scss/utilities/borders";
 @import "~bootstrap/scss/utilities/display";
 @import "~bootstrap/scss/utilities/embed";
 @import "~bootstrap/scss/utilities/flex";
@@ -32,10 +58,10 @@ $spacers: (
 @import "~bootstrap/scss/utilities/spacing";
 @import "~bootstrap/scss/utilities/text";
 
-$mdc-theme-primary: #268bd2;
-$mdc-theme-secondary: #2aa198;
-$mdc-theme-surface: #252525;
-$mdc-theme-background: #222;
+$mdc-theme-primary: $blue;
+$teal: $teal;
+$mdc-theme-surface: $gray-800;
+$mdc-theme-background: $gray-900;
 $mdc-typography-font-family: unquote("Roboto, sans-serif");
 
 @import "~@material/button/mdc-button";
@@ -44,26 +70,17 @@ $mdc-typography-font-family: unquote("Roboto, sans-serif");
 @import "~@material/top-app-bar/mdc-top-app-bar";
 @import "~@material/typography/mdc-typography";
 
+.mdc-button.mdc-button-danger {
+	@include mdc-button-ink-color($red);
+	@include mdc-states($red);
+}
+
 .mdc-top-app-bar__title a {
 	color: white;
 	text-decoration: none;
 
 	&:hover {
 		text-decoration: none;
-	}
-}
-
-body {
-	background-color: #222;
-	color: #eee;
-}
-
-a {
-	color: $mdc-theme-secondary;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
 	}
 }
 

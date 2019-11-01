@@ -46,7 +46,6 @@
 		"@material/typography": "^3.1.0",
 		"@types/react-router-dom": "^5.1.0",
 		"bootstrap": "^4.3.1",
-		"normalize.css": "^8.0.1",
 		"react-router-dom": "^5.1.2",
 		"rxjs": "^6.5.3",
 		"rxjs-hooks": "^0.5.1",

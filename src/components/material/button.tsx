@@ -5,6 +5,7 @@ import { IconProps, Icon as SvgIcon } from "../icons/icon";
 export interface ButtonProps
 	extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
 	dense?: boolean;
+	color?: "primary" | "danger";
 }
 
 const ButtonFn: React.FC<ButtonProps> = props => {
@@ -14,13 +15,15 @@ const ButtonFn: React.FC<ButtonProps> = props => {
 		}
 	}, []);
 
+	const color = !props.color || props.color === "primary" ? "" : `mdc-button-${props.color}`;
 	const dense = props.dense ? "mdc-button--dense" : "";
 
 	const htmlProps = { ...props };
+	delete htmlProps.color;
 	delete htmlProps.dense;
 
 	return (
-		<button ref={ref} {...htmlProps} className={`mdc-button ${dense} ${props.className || ""}`}>
+		<button ref={ref} {...htmlProps} className={`mdc-button ${color} ${dense} ${props.className || ""}`}>
 			{props.children}
 		</button>
 	);
