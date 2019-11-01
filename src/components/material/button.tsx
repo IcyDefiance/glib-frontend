@@ -5,7 +5,7 @@ import { IconProps, Icon as SvgIcon } from "../icons/icon";
 export interface ButtonProps
 	extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
 	dense?: boolean;
-	color?: "primary" | "danger";
+	color?: "primary" | "danger" | "muted";
 }
 
 const ButtonFn: React.FC<ButtonProps> = props => {

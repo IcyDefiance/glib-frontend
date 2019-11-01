@@ -43,11 +43,25 @@ export const TitleBar: React.FC = () => {
 					<TitleLink to="/">Glib</TitleLink>
 				</div>
 				<div>
-					<Button type="button" dense tabIndex={-1} className="rounded-0 px-0" onClick={() => minimize()}>
-						<Button.Icon icon={miWindowMinimize} className="text-muted mr-0" />
+					<Button
+						type="button"
+						color="muted"
+						dense
+						tabIndex={-1}
+						className="rounded-0 px-0"
+						onClick={() => minimize()}
+					>
+						<Button.Icon icon={miWindowMinimize} className="mr-0" />
 					</Button>
-					<Button type="button" dense tabIndex={-1} className="rounded-0 px-0" onClick={() => maximize()}>
-						<Button.Icon icon={miWindowMaximize} className="text-muted mr-0" />
+					<Button
+						type="button"
+						color="muted"
+						dense
+						tabIndex={-1}
+						className="rounded-0 px-0"
+						onClick={() => maximize()}
+					>
+						<Button.Icon icon={miWindowMaximize} className="mr-0" />
 					</Button>
 					<Button
 						type="button"

@@ -71,8 +71,13 @@ $mdc-typography-font-family: unquote("Roboto, sans-serif");
 @import "~@material/typography/mdc-typography";
 
 .mdc-button.mdc-button-danger {
-	@include mdc-button-ink-color($red);
-	@include mdc-states($red);
+	@include mdc-button-ink-color($danger);
+	@include mdc-states($danger);
+}
+
+.mdc-button.mdc-button-muted {
+	@include mdc-button-ink-color($text-muted);
+	@include mdc-states($text-muted);
 }
 
 .mdc-top-app-bar__title a {
